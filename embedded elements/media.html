@@ -1,0 +1,154 @@
+<!-- Any website must be able to engage well with its visitors, be entertaining, and be able to quickly deliver information.
+
+Embedding content like audio clips, videos, images, maps, and so on... are a great way of engaging, be entertaining and be able to quickly deliver information to the website users.
+
+Pictures or moving pictures, maps, etc. typically draw user attention and trigger quite a lot of emotions. Humans find it easy to connect to such information, rather than having to go through textual information.
+
+This is why HTML provides tags for embedding media content like audio, video, and images and also for embedding external content like maps.
+
+HTML5 supports the following types of embedded elements:
+
+audio
+video
+image
+iframe -->
+
+<img src="Summit.png" alt="image unavailable"/>
+
+
+<!-- We can also provide a caption for the embedded images.
+
+HTML provides a semantic element <figure> along with <figcaption> element which help us to provide caption for our images.
+
+For example, consider the following code. -->
+
+<figure>
+    <img src="tropicalSea.jpg"
+         alt="An image of tropical sea"
+         width="400"
+         height="341">
+  
+    <figcaption>A colorful tropical sea view</figcaption>
+</figure>
+
+<br>
+
+<!-- Audio Element:
+
+Embedding audio to a web page can be done with <audio>...</audio> tag. The <audio> tag has an attribute 'src' which defines the location of the audio file. It also has an attribute 'controls' which specifies whether to display the player controls. -->
+
+<audio src="audio.mp3"  controls="controls"></audio>
+<!-- Content between <audio> and </audio> tag will be shown by browsers who do not support audio element. -->
+
+<!-- Attribute	Value	Description
+loop	Boolean- any value sets it to true	Loops audio indefinitely
+autoplay	Boolean- any value sets it to true	Plays audio indefinitely
+preload	none-preloading
+metadata- audio metadata is downloaded
+auto- entire audio file is downloaded	Specifies whether audio should be preloaded or not
+muted	Boolean- any value sets it to true	Mutes audio -->
+
+
+<br>
+
+<!-- 
+Video Element:
+
+Videos can be embedded into web pages using <video>…</video> tag. The <audio> tag has an attribute 'src' which defines the location of the audio file.  It also has an attribute 'controls' which specifies whether to display the player controls. -->
+
+<video src ="myVideo.mp4" controls="controls"></video>
+<!-- Content between <video> and </video> tag will be shown by browsers who do not support the video element. -->
+
+
+<!-- 
+Some of the attributes which are supported by video element are as follows:
+
+Attribute	Value	Description
+loop	Boolean- any value sets it to true	Loops audio indefinitely
+autoplay	Boolean- any value sets it to true	Plays audio indefinitely
+preload	none-preloading
+metadata- video metadata is downloaded
+auto- entire audio file is downloaded	Specifies whether the video should be preloaded or not
+height	pixel	Specifies the height of the video player
+width	pixel	Specifies the width of the video player
+poster	URL of an image file	Displays image until the first frame of the video is downloaded
+muted	Boolean- any value sets it to true	Mutes audio
+  -->
+
+  <br>
+
+  <!-- Source Element:
+
+All browsers do not support all audio/video formats. Therefore, the audio/video element allows you to list multiple sources with the <source> element. The <source> element has an attribute 'type' which specifies the type of the file.
+
+The browser iterates through all sources one by one until it finds one which it can play. It should be noted that while listing the audio/video formats, it should be in the order from most desirable to least desirable to avoid the number of unnecessary iterations.
+
+Also, it is suggested to use the <source> element within the audio/video element instead of the src attribute. -->
+
+<audio>
+   <source src="myaudio.ogg" type="audio/ogg">
+   <source src="myaudio.mp3" type="audio/mp3">
+</audio>
+
+<br>
+
+<!-- 
+We might have requirements to include documents, videos, interactive videos, or even other web content into a web page directly from external sources
+The <iframe> element is used to meet the above requirement. Using the iframe element, contents from external sources can be integrated anywhere on our web page 
+It is defined using <iframe>…</iframe> tag
+. -->
+<!-- 
+Some possible values of the 'sandbox' attribute are shown below:
+
+Value
+
+Description
+
+(no value)
+
+Enables all restrictions
+
+allow-forms
+
+Allows users to submit the form
+
+allow-scripts
+
+Scripts execution would be enabled.
+
+allow-same-origin
+
+iframe content would be considered as accessed from the same origin
+
+allow-popups
+
+Popups can be enabled.
+
+allow-popups-to-escape-sandbox
+
+Popups can be opened in new windows without any sandbox restrictions.
+
+allow-orientation-lock
+
+The orientation of the Screen can be locked.
+
+allow-pointer-lock
+
+Pointer Lock API can be accessed.
+
+allow-presentation
+
+Session Presentation is enabled for the user.
+
+allow-top-navigation
+
+iframe content can access its top-level browsing context. -->
+
+<!-- allow-top-navigation-by-user-activation
+
+iframe content can access its top-level browsing context only through user interaction.
+
+For example, the below-given code demonstrates how to enable Form submission and Script execution for xyz.html page. -->
+
+<iframe src="xyz.html" sandbox="allow-forms allow-scripts "></iframe>
+

@@ -1,0 +1,430 @@
+ag
+
+Description
+
+Attributes
+
+Possible Values
+<title>
+
+Specifies the title of the web page.
+
+None
+
+ 
+<link>
+
+Specifies the hyperlink to an external source.
+
+href, rel
+
+rel="stylesheet" 
+href="mystyle.css"
+<style>
+
+Specifies the CSS styling inside HTML page.
+
+None
+
+ 
+<script>
+
+Specifies the JavaScript Code for the web page.
+
+None
+
+ 
+<meta>
+
+Specifies the additional meta information for the web page.
+
+name,content
+
+name='description',
+content="details of web page content"
+ 
+
+Page Layout and Content Tags:
+
+Tag
+
+Description
+
+Attributes
+
+Possible Values
+<header>
+
+Specifies the wrapped text as the header of the web page document.
+
+None
+
+ 
+<footer>
+
+Specifies the wrapped text as the footer of the web page document.
+
+None
+
+ 
+<article>
+
+Specifies independent and self-contained content.
+
+None
+
+ 
+<section>
+
+Specifies a section in a web page document such as chapters.
+
+None
+
+ 
+<aside>
+
+Keeps the content aside from the main content.
+
+None
+
+ 
+<nav>
+
+Specifies the navbar portion of the web page.
+
+None
+
+ 
+<main>
+
+Specifies the main content of the document.
+
+None
+
+ 
+<a>
+
+Specifies hyper-link to either an external web page or some other division of the same web page. 
+
+href, rel, target
+
+href ="dummy.com"
+rel=" noopener noreferrer"
+target="_blank, _self,_parent or _top"
+ 
+<div>
+
+Separate block-level division of the web page document.
+
+None
+
+ 
+<span>
+
+Specifies the Inline division of an HTML element.
+
+None
+
+ 
+<ul>
+
+Specifies the unordered list.
+
+ 
+
+ 
+<ol>
+
+Specifies the ordered list.
+
+type, start, reversed
+
+1,I,I,a,A
+<li>
+
+Specifies the list item element.
+
+None
+
+ 
+<dl>
+
+Specifies the description list.
+
+None
+
+ 
+<dt>
+
+Specifies the Title of the description list element.
+
+None
+
+ 
+<dd>
+
+Specifies the definition/ details of the description list element.
+
+None
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+ Tag
+
+Description
+
+Attributes
+
+Possible Values
+<h1>,<h2>, <h3>, <h4>,<h5>, <h6>
+
+Heading tags where <h1> is the most important heading and <h6> is the least important heading.
+
+None
+
+ 
+<p>
+
+Specifies paragraph element.
+
+None
+
+ 
+<br>
+
+Specifies the line break.
+
+None
+
+ 
+<blockquote>
+
+Specifies quotes.
+
+cite
+
+cite="dummy.com"
+<sup>
+
+Format the text content as superscript.
+
+None
+
+ 
+<sub>
+
+Format the text content as a subscript.
+
+None
+
+ 
+<em>
+
+Emphasize the text content.
+
+None
+
+ 
+<strong>
+
+Highlight the text content as important making it bold.
+
+None
+
+ 
+<mark>
+
+Highlight the text content marking it with a yellow background.
+
+None
+
+ 
+<del>	Specifies deleted text by striking off.	None	None
+<ins>	Specifies inserted text by underline.	None	None
+ 
+
+Forms Element:
+
+Tag
+
+Description
+
+Attributes
+
+Possible Values
+<form>
+
+Specifies the form element.
+
+action, method
+
+action="target.html"
+method="GET"
+<input>
+
+Specifies the input field.
+
+type, placeholder, value, formaction
+
+type=" text",
+placeholder="Enter Username"
+value=""
+formmethod-"POST"
+<button>	Specifies an input button element.	None	None
+<label>	Specifies label for an input element.	for	for = "id1"
+<select>
+
+Specifies the drop-down list.
+
+value
+
+ 
+<option>
+
+Specifies the options in the <select> drop down.
+
+value, selected
+
+value ="abc"
+selected= "true"
+<datalist>
+
+Specifies the auto-completion list.
+
+None
+
+None
+<progress>	Specifies a progress bar	min, max, step, value	min ="0", max="10", step="1", value="5"
+<meter>	Specifies a meter guage	min,max,step,value	min="0", max="10", step="1", value="1"
+<output>	Displays output of user input	None	None
+<textarea>
+
+Custom sized text box to collect input.
+
+rows, cols
+
+rows ="2" cols="2"
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Table Elements:
+
+Tag
+
+Description
+
+Attributes
+
+Possible Values
+<table>
+
+Specifies the table element.
+
+None
+
+None
+<thead>
+
+Specifies the header portion of the table element.
+
+None	None
+<tbody>
+
+Specifies the content portion of the table
+
+None
+
+None
+<caption>
+
+Specifies the heading of the table
+
+None
+
+None
+<colspan>
+
+The element that is used to logically group the related columns
+
+None
+
+None
+<tr>
+
+Specifies a new table row.
+
+None
+
+None
+<td>	Specifies a new table column.	None	None
+ 
+
+Embedded Elements:
+ 
+Tag
+
+Description
+
+Attributes
+
+Possible Values
+<img>
+
+The element that is used to embed an image into the web page.	src, alt	src="./demo.img"   alt="Alternative text"
+<audio>
+
+The element that is used to embed audio into the web page.
+
+src, controls, loop, autoplay, preload, muted
+
+src='./audio.mp3'  controls ="controls"
+<video>
+
+The element that is used to embed video into the web page.
+
+src, controls, loop, autoplay, preload
+
+src="./video.mp4"
+controls="controls"
+<source>
+
+Specifies the different formats for video/ audio elements to be embedded into the web page.
+
+src
+
+src= "abc.mp4"
+<figure>	Specifies a self-contained content along with a caption.	None	None
+<figcaption>	Specifies a caption for a <figure> element	None	None
+ 

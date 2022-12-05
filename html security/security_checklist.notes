@@ -1,0 +1,43 @@
+Every web developer will be using HTML for creating web pages. 
+
+Let us understand the security best practices that the developer should follow during HTML coding to create a secure web application.
+
+Do not just rely on client-side validation 
+HTML5 provide features to perform client-side validation. But do not just rely on the client-side validation, ensure that validation is performed on the server-side as well for sensitive actions like authentication.
+
+Sanitize user inputs
+Any input from the user is to be assumed as untrusted. Proper sanitization of input data provides protection from different kinds of attacks like HTML Injection, etc.
+
+Use the attributes "noopener" and "noreferrer"  whenever a link is provided to open in a new tab.
+<a href="https://www.mysite.com" target="_blank" rel="noopener noreferrer">Mysite</a>
+
+The  "noopener" attribute instructs the browser not to grant the browsing context access to the document that opened its new link.
+
+The "noreferrer" attribute prevents the browser from sending the page address, or any other value, as the referrer when navigating to another page.
+
+Use the sandbox attribute of an iframe 
+Make sure to add the "sandbox" attribute to the iFrame feature of HTML5 as it provides additional restrictions to the content.
+
+Eliminate comments from the final code
+Use comments only for documentation purposes. Avoid the usage of comments to store sensitive information in the HTML as it is entirely visible. Any unwanted comment is to be removed before the production build. Modern browsers can inspect the commented code and sensitive information can be retrieved.
+
+Refer to the latest security news
+Keep checking the latest news in the security area as the internet is growing and new security features and techniques may get implemented every day.
+
+Use a Content Security Policy (CSP)
+With the aim of protecting the application from potential dangers, use a Content Security Policy to delimit the assets that are permissible to be added to the application
+
+To ensure including the media in a secure way,
+
+use the CSP directive img-src to load images from valid sources
+
+use the CSP directive media-src to load audio and video from valid sources
+
+Use web storage judiciously.
+ Avoid storing sensitive data in the web storage since it is stored in the browser.
+
+Use safe methods.
+ Know about safe methods in a language/technology and use them for secure coding. For example, using innerText or textContent property is safe instead of innerHTML in JavaScript.
+
+Implement CORS Policy
+Implement CORS policy to allow access to the application services.

@@ -1,0 +1,73 @@
+The following are some best practices to be followed while developing a web page or an application using HTML5.
+---------
+
+1.In the application, ensure that each web page is having proper document structure with divisions such as <head>, <body>, <header>, <footer>.
+
+
+Ensure that correct DOCTYPE is declared, which is required for the browser to understand the standards of the application used to render it properly.
+
+
+
+Use a meaningful title for the web pages.
+
+
+
+Always close the tag even if it is not a container tag.
+
+
+
+Avoid Inline styles and embedded scripts. Try to include script and style with external files keeping your HTML code clean and neat.
+
+
+
+Include the script as an external file and place this code at the end portion of the <body> tag.
+
+
+
+Add the lang attribute to the root element, and keep the value as short as possible.
+
+
+
+Even though HTML is case insensitive, using lowercase for code is the best practice.
+
+
+
+Use the most appropriate HTML tag for sectioning the web page. Try to avoid the generic <div> tag and use more meaningful tags such as <article>, <section> and appropriate tags in the web pages.
+
+
+
+Always use <ul> for designing navigation bars.
+
+
+
+Avoid the use of the 'type' attribute in the HTML list element and use the corresponding CSS property list-style-type property instead.
+
+
+
+On embedding elements to the web page, use the alt attribute with a proper description text.
+
+
+
+Indent nested elements properly.
+
+
+
+Use appropriate type attribute for Input element inside forms, also ensure the form control is wrapped with <label> element.
+
+
+
+Use a sandbox attribute along with the iframe element whenever it is needed to embed another webpage into the application.
+
+
+
+Use rel attribute with a value "noopener  noreferrer" along with hyperlink, to avoid reverse tabnabbing.
+
+
+
+Consider all the input data as untrusted information and sanitize those inputs before it is used in some logic in the application.
+
+
+
+Do proper output encoding to avoid chances of injection of malicious code to the application through input elements.
+
+

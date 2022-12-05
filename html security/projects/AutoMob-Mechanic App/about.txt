@@ -1,0 +1,20 @@
+AutoMob-Mechanic is a web application for an Automobile service/repair company. The application provides different services to get the car repaired or serviced. The user can book a service on their convenient date and then the company representatives will take care of attending to the service request. 
+Create the below-mentioned HTML pages with listed features:
+
+ home.html: For displaying information about the company.
+
+ services.html: For displaying services provided by the company.
+
+ preventive-maintenance-service.html: For displaying about the preventive maintenance services.
+
+ body-repair-service.html: For the displaying about the body repair services.
+
+ car-care-service.html: For displaying car care services.
+
+ booking.html: For displaying the form to book a particular service.
+
+ appointment.html: For displaying the form to schedule an appointment.
+
+ booking-success.html: For displaying the confirmation message on booking.
+
+Click here to download the images.

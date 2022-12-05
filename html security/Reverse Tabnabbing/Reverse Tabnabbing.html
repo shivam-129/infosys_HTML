@@ -1,0 +1,59 @@
+<!-- Let us now see another type of attack possible in web applications called reverse tabnabbing. 
+
+Reverse Tabnabbing is an attack where the linked page can control the parent page and can rewrite it without the notice of the original user. The changed page looks similar to the original one. This may lead to one form of phishing attack where an attacker can steal authentication data or any sensitive information from the user. This attack is mostly possible if a user is in an unsecured network like a public wifi hotspot. It is also possible if the user URL has HTTPS, an attacker has to spoof only the site that is being linked to.
+
+Let us understand this attack by an example: -->
+
+<!-- Consider a message forum or a blog where an attacker can post his own website link. If any user visits that link
+     will be shown some information but in the background that malicious website will redirect the parent login page to a fake page that looks similar to the 
+     original login page. When a user comes back to the message forum, they appear to be logged out. Without thinking they will enter their credentials to log
+      in as the page looks similar to the original one. Now the attacker can get hold of that authentication data. Now the user will be redirected to the message 
+    forum page automatically so that they won't get a doubt that they have entered credentials in a fake login page. -->
+
+
+
+    <!-- This attack is possible in two scenarios:
+
+1. If a website is using a hyperlink with a target attribute in which if the user clicks that 
+link the new page will be loaded in a new window/tab keeping the current page opened in the original tab.  -->
+<a href="example.html" target="_blank">Click here to win a lottery</a>
+
+<!-- 2. If a website is using a window.open javascript function -->
+<button onclick="window.open('example.html')">Click here to win a lottery</button>
+<!-- Following is the malicious script which will run behind the scenes when a user clicks the above hyperlink or button: -->
+
+<script>
+    if (window.opener) {
+        window.opener.location = "../attack.html";
+    }
+</script>
+<!-- As we have understood the reverse tabn -->
+
+
+
+
+
+
+
+<!-- 1. If a hyperlink is used with a target attribute, use the below attribute -->
+
+<a href="example.com" target="_blank" rel="noopener noreferrer">Click here to win a lottery</a>
+<!-- noopener option informs the browser not to make the opener object available to the linked website. As this option is not supported by a few older browsers, we should also include the noreferrer option as well. The noreferrer option tells the browser not to make any referrer information available to the linked website. -->
+
+<!-- 2. If we don't want to set opener and referrer options for every hyperlink, we can set this as an HTTP header in all responses.
+Referrer-Policy: no-referrer
+
+
+3. If the window.open function is used, use 'noopener, noreferrer' in the third parameter(windowfeatures) of it. -->
+
+<script>
+function openWindow(url, name, options){
+  // Set opener and referrer options
+  var newWindow = window.open(null, name, 'noopener,noreferrer,'+options);
+  //Reset the opener link
+  newWindow.opener = null;
+  // Load the correct url
+  newWindow.location = url;
+}
+</script>
+<!-- As you observe, we need to set the URL only after clearing the opener to prevent the attack. If we use the URL in the window.open function directly, it will be opened in a new tab/window which will open space for attacks. -->

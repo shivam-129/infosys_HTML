@@ -1,0 +1,220 @@
+<!-- The <form> tag has the below attributes:
+
+method: Defaults to HTTP "get" method of submission to the server. To use HTTP "post", use method="post"
+
+action: The URL to which the form data has to be submitted
+
+target: Specifies if the submitted result will open in the current window, a new tab, or on a new frame -->
+
+<!-- 
+The possible value of "type"	Description
+text	Creates textbox
+password	Creates textbox that accepts the only password
+checkbox	Creates checkbox
+radio	Creates a radio button
+button	Creates button
+submit	Creates a button that submits values of all form elements to the server
+reset	Creates a button that resets values of all form elements to their default value
+image	Creates a graphical version of a button
+file	Creates control to upload the file to the server
+hidden	Creates a hidden text field
+email	Creates textbox that accepts only valid email id
+number	Creates spinbox that accepts only whole numbers
+range	Creates a range slider
+search	Creates a search bar
+URL	Creates textbox that accepts only valid URL
+color	Creates color picker
+date	Creates date picker to select date
+month	Creates date picker to select a month
+week	Creates date picker to select week -->
+
+<!-- 
+Input type - checkbox: 
+
+Defines a checkbox.
+
+The checked attribute checks that particular checkbox value. 
+
+Also, multiple checkboxes can be checked at a time. -->
+
+ Hobbies: <input type="checkbox" checked> Reading 
+       <input type="checkbox" checked> Singing 
+       <input type="checkbox" > Dancing 
+
+
+       <br>
+       <!-- Input type - radio: 
+
+       Defines a radio button.
+       
+       The name attribute specifies the associated name of that radio button.
+       
+       Radio buttons in a group should have the same name. -->
+       
+       Gender: <input type="radio" name="gender" checked value="Male"> Male
+       <input type="radio" name="gender" value="Female"> Female
+
+       <br>
+
+       <!-- Input type - file: 
+
+       Creates a control to upload a file to the server.
+        -->
+       Select a file: <input type="file">
+
+
+
+       <!-- <button>  element:
+
+        Defines a clickable button that can be used to submit the form. 
+        
+        The button can be of 3 types:
+        
+        submit (default with <button> tag)
+        
+        reset (to reset the form)
+        
+        button (just a clickable button) -->
+        
+        <button type="submit">Raise your query</button>
+
+<br>
+
+        <!-- <textarea> element: 
+            Defines a multi-line text field.
+            It is not possible to set a default text using the value attribute. Hence, default text can be placed into <textarea>…</textarea> tag.
+             -->
+            Write your comments: <textarea rows="4" cols="10" >Default value</textarea>
+            <br>
+<!--             
+            Input type: Hidden:
+            You may want to submit supplementary data (such as users' language of user input) to the server, without any user interaction.
+            This can be done using a hidden element.
+             -->
+            <input type="hidden" name="Language" value="English"/>
+
+
+
+            <!-- Label:
+
+The <label> element is used to associate a text label with a form <input> field. The label is used to tell users the value that should be entered in the associated input field.
+
+Additionally, the "for" attribute of the label can point to the "id" of input control. This ensures the cursor focuses on the respective input control on the click of the label.
+
+It also enhances the usability, by allowing the user to toggle the control by clicking on text written within <label>…</label> tag. -->
+
+
+<!-- We have various picker-elements in HTML forms such as color-picker and date-picker elements. 
+
+Let us see them in detail.
+
+Input type - color: 
+
+Defines a color picker. -->
+
+Choose a color: <input type="color">
+
+<br>
+
+<!-- Input type - date: 
+Creates a date-picker which is used to collect dates. -->
+
+Date of Birth: <input type="date">
+
+
+
+<br>
+
+
+
+<!-- We have <select> and <datalist> elements in HTML which helps to collect input data from user as a drop-downs.
+
+    Let us see them in detail:
+    
+    <select> element : 
+    
+    Defines a drop-down list. 
+    
+    The "multiple" attribute can be used for having a multi-select dropdown menu.
+     -->
+    Country code: <select >
+        <option value="">-- Please choose a country code --</option>
+        <option value="+213">+213</option>
+        <option value="+91">+91</option>
+        <option value="+244">+244</option>
+        <option value="+61">+61</option>
+        <option value="+973">+973</option>
+    </select>
+
+    <br>
+
+
+    <!-- <datalist> element: 
+
+        Defines a set of pre-defined options available to choose for an <input> element.
+        
+        In the below example list attribute holds lists of possible options, the value assigned to the list attribute of the input element and id attribute of datalist attribute should be the same and the value sent to the server should be assigned to the option element value attribute. 
+         -->
+        Country: <input list="countries">
+        <datalist id="countries">
+            <option value="India">
+                <option value="France">
+                    <option value="Singapore">
+                        <option value="Thailand">
+                            <option value="United Arab Emirates">
+                                <option value="United States of America">
+        </datalist>
+
+        <br>
+
+        <!-- Input type – range: 
+
+        Defines a range slider, where the user can select input. 
+         -->
+        Volume: <input type="range"/>
+
+        <br>
+
+
+        <!-- Meter: 
+
+Can be used to represent a scalar measurement within a known range. -->
+
+Disk usage: <meter min="0" max="100" value="50"></meter>
+
+<br>
+
+
+<!-- Progress: 
+
+Can be used to represent the progress of a task.  -->
+
+Task completed: <progress min="0" max="100" value="50">50 of 100</progress>
+
+<!-- 
+Note: <progress> can be used to mark up the completion rate/degree of progress of an "in progress" task through a progress bar.
+Whereas, <meter> is used to represent a gauge or to represent a measurement in a known scale. -->
+
+
+   <br>
+
+
+   <!--   Output:
+
+Displays the output of user input.
+
+For example, consider the below code snippet: -->
+
+<form oninput="result.value=parseInt(a.value)+parseInt(b.value)">
+  <input type="number" id="b" name="b" value="10" /> +
+  <input type="number" id="a" name="a" value="10" /> =
+  <output name="result" for="a b">20</output>
+</form>
+<!-- The 'oninput' attribute carries the logic of generating the output, and the 'for' attribute of <output> tag specifies the control for which output has to be calculated. 
+The above-given code would populate two input fields on the web page and the sum of the values of these two input fields is generated dynamically based on user activity on this page. 
+The output of the above code snippet will be as shown below:
+
+
+Note: A disabled attribute can be used with any input type to restrict user interaction. 
+For example, a button can be made non-clickable, Checkbox can be made non-selectable.  
+The output may vary for some input elements according to the browser. -->

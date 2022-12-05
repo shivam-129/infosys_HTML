@@ -1,0 +1,110 @@
+<!--
+ Hackers will have several ways to trick the user and make them click on something which they are not supposed to. 
+
+ A common form of this attack involves mirroring a login form on a website. Users will think that they are entering values in the 
+ actual HTML form but they are actually entering them in the form fields that are overlaid on that web page. 
+ The data which the user enters will be sent directly to an attacker's page. In this type of attack, hackers will usually target 
+ sensitive data like passwords, bank account information, credit card information, etc.,
+
+Below are some real-time scenarios of clickjacking attacks:
+
+1. There was an attack on one of the popular browser plugins, where an attacker added a modified page in an iframe and can trick a user into changing settings of the plugin to get access to the local system's resources such as a microphone, camera, etc.
+2. A popular social networking site was attacked by tricking users to click on a button that will make them retweet the location of the malicious web page which will be propagated hugely.
+-->
+
+<!-- 
+    Clickjacking is frequently used to hijack accounts for spamming purposes or navigate links to malicious web pages on online social network websites.
+What is Clickjacking?
+It is an attack where an attacker uses low iframes with low opaqueness or transparent layers to trick users into clicking on something somewhat diverse from what they actually see on the page. Thus an attacker is hijacking clicks which will 
+execute some malicious code and hence the name 'Clickjacking'. It is also known as UI redressing or iframe overlay.
+For example, on a social networking website, a clickjacking attack leads to an unauthorized user spamming the entire network of your friends by sending some false messages.
+
+How clickjacking is performed?
+1. Attackers load a target web page inside a low opacity iframe and on top of that iframe, the attacker's web page will be rendered with a clickable button or link.
+
+2. When a user clicks on that button or link of the rendered web page, it triggers actions on the invisible page. The invisible page might be a malicious web page or a legitimate web page, which the user did not intend to visit.
+
+3. The end user will have no idea that a click has been made on the invisible page and without the user's knowledge actions are performed on the attacker's web page
+
+So, a web developer should also take care of clicks on the web page so that they should not get redirected to some malicious pages. -->
+
+
+<!-- There are two ways to prevent clickjacking:
+
+1. Client-side methods: The most common method is to prevent the webpages from being displayed within a frame which is known as frame-buster or frame-killer. Though this method is effective in a few cases it is not considered a best practice as it can be easily bypassed.
+Below is the implementation of frame-buster: -->
+
+<script>
+   // frame busting
+   if (self == top) {
+      document.documentElement.style.visibility = 'visible';
+   } else {
+      top.location = self.location
+   }
+   function register() {
+       alert('Registered')
+   }
+</script>
+<!-- This code ensures that the current frame is the top-level window. -->
+
+
+
+<!-- 2. Server-side methods: Security experts recommend server-side methods to be the most effective methods to defend against clickjacking. Below are the two response headers to deal with this. 
+  (i) Using X-Frame-Options response header.
+
+  (ii) Using Content Security Policy(CSP) response header.
+
+X-Frame-Options:
+It is a response header that is to be set as part of the HTTP response of a web page. It specifies whether a browser should be permitted to show a web page inside a <frame> or <iframe> tag.
+
+The below values can be set for the X-Frame-Options header:
+
+(i) SAMEORIGIN – This choice permits the current page to be displayed in a frame on another page, but only within the current domain.
+
+(ii) DENY – This choice does not permit any domain to render the current page within a frame. This is the most secure option to provide restriction.
+
+(iii) ALLOW-FROM URI – allows the current page to be displayed in a frame, but only in a specific URI – for example, www.example.com/frame-page.
+
+Limitations of X-Frame-Options:
+(i) The X-Frame-Options header should be kept as part of every HTTP response for a website on setting the value as SAMEORIGIN. 
+
+(ii) X-Frame-Options doesn't work with multi-domain sites
+
+(iii) Any one of the X-Frame-Options header values is allowed to be used on a web page. It is not likely to display a page as a frame both on the current website and on the external website.
+
+(iv) X-Frame-Options is deprecated in most of the current browsers.
+
+ So, now the latest defense mechanism for clickjacking is to use CSP. -->
+
+
+
+
+
+
+
+
+<!-- 
+ Content-Security-Policy (CSP):
+ Content Security Policy is a standard to mitigate and detect numerous content injection attacks. It is an HTTP response header that provides different directives that are used to limit how and from where content can be loaded into a web application. A browser that is compatible with CSP will execute only the scripts mentioned in the allowed list of domains.
+ 
+ To configure Content Security Policy, we need to set the "Content-Security-Policy" response header or in the "<meta>" tag of HTML. Set the values to control the resources that the browser is allowed to load for that particular page.
+ 
+ The policy can be specified as shown below:
+ 
+ Content-Security-Policy: policy
+ The policy can be set using different directives that define the policy for a certain resource type. One of the directives "frame-ancestors" can be set to protect against clickjacking which denotes if a browser should be allowed to embed a page in an <frame> or <iframe>.
+ 
+ Examples:
+ Content-Security-Policy: frame-ancestors 'none'
+ 
+ This doesn't allow any domain to embed a web page in a frame.
+ 
+ Content-Security-Policy: frame-ancestors 'self'
+ This allows only the current page to be embedded inside a frame.
+ 
+ Content-Security-Policy: frame-ancestors 'self' '\*.example.com' 'https://mywebsite.com';
+ This allows the current page, any page from the example.com domain, and only the mywebsite.com page to be embedded in a frame.
+ 
+ It is recommended to set the CSP directives in the response header at the server configuration level as it handles the entire application.
+ 
+ Note: If there is a requirement to use an iframe in the application, then use the sandbox attribute to prevent clickjacking. -->

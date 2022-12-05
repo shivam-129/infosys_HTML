@@ -1,0 +1,58 @@
+<!-- Problem Statement:
+
+Create three web pages called Form.html, Submission.html, and demo.html as below-mentioned. 
+
+Activities:
+
+Remove the sandbox attribute and try the form submission with some test username and password.
+
+Provide the value "allow-forms" for the sandbox attribute and try form submission.
+
+Note: You can execute this tryout in your Visual Studio code IDE or any other editors. -->
+
+<!-- Form.html: -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <body>
+        <h1>Login Form</h1>
+        <form action="Submission.html">
+            <label for="">Name:</label>
+            <input type="text"/> <br> <br>
+            <label for="">Password</label>
+            <input type="password"/> <br> <br>
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html>  
+    <body>
+        <p>This is a demo to load an external html file containing a form. Sandbox attribute restricts
+            the user from form submission. Try removing sandbox attribute, provide some username and password
+            and hit submission button
+        </p>
+        <iframe src="./form.html"
+        width="1000" height="1000" sandbox=""></iframe>
+    </body>
+</html>
+
+<!-- Submission.html: -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <body>
+        <h1>Logged in!</h1>
+    </body>
+</html>

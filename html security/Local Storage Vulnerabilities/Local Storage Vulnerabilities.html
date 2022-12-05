@@ -1,0 +1,59 @@
+<!-- In our web applications, we often store some data in the browser cache. As the data is stored at the client-side, there is a chance of data-stealing by injecting some malicious code, if no proper care is taken. Let us now see how to store the data properly to prevent such attacks.
+
+HTML5 has introduced Web storage or offline storage which deals with storing data in a local cache. Data can be stored using two types of objects in HTML5. Local storage and Session storage. These storages hold data in the form of key-value pairs.
+
+Local storage holds the data in the browser cache until the user deletes it or it expires based on the expiry date given. setItem() method is used to assign data to local storage. The below code creates three items with names bgcolor, textcolor, fontsize and assigns the values to them. -->
+
+localStorage.setItem("bgcolor", document.getElementById("bgcolor").value);
+localStorage.setItem("textcolor", document.getElementById("textcolor").value);
+localStorage.setItem("fontsize", document.getElementById("fontsize").value);
+
+<!-- getItem() method is used to fetch values from local storage. Below is the code to retrieve values from localStorage. -->
+
+document.getElementById("page").style.backgroundColor = localStorage.getItem("bgcolor");
+document.getElementById("page").style.color = localStorage.getItem("textcolor");
+document.getElementById("page").style.fontSize = localStorage.getItem("fontsize");
+
+
+<!-- Users can view the storage data in the browser by pressing F12 as shown below:
+
+Represents browser's local storage
+
+Similarly, session storage holds the data until the session ends or the browser/tab is closed. 
+
+An attacker can inject some malicious code and can steal the data stored here. So we should always ensure that sensitive information is not stored at the client side.
+
+Let us now understand how to mitigate local storage vulnerability. -->
+
+
+
+
+Mitigation Techniques:
+1. Never store sensitive information on client-side
+
+2. Use cookies with the 'httponly' flag to protect the data stored at the client-side
+
+ 
+
+Cookies
+A cookie is a piece of data that is stored in the user's browser. It can store a maximum of 4 KB of data in the browser. Data in cookies are stored as key-value pairs.
+
+Example of a cookie:
+
+userName=Smith; expires=Mon, 15 Oct 2018 23:00:00 GMT;
+key: userName
+value: Smith
+expires: Mon, 15 Oct 2018 23:00:00 GMT;
+path: \
+To create a cookie we can use document.cookie property.  
+
+document.cookie = cookieValue;
+cookieValue is a string in key-value pairs. For example, a cookie to store username and password can be created as below
+
+document.cookie = "username = Smith;password = secret";
+In the above code snippet username and password are keys, Smith and secret are their corresponding values.
+
+Below is the syntax of setting a cookie in the HTTP response header:
+
+Set-Cookie: <name>=<value>[;<Max-Age>=<age>][;expires=<date>][;domain=<domain_name>][;path=<some_path>][;secure][;HttpOnly]
+Now let us see a demo on how to inject malicious code to steal local storage data and its mitigation.

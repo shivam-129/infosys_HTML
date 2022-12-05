@@ -1,0 +1,122 @@
+<!-- The following are some of the attributes which can be used with HTML input elements.
+
+Placeholder
+Pattern
+Min
+Max
+Step
+Required
+Multiple
+Form-override
+
+Let us see each of them in detail. -->
+
+
+<!-- Placeholder: -->
+<!-- The placeholder attribute specifies a value that appears in the textbox as below: -->
+First name: <input type="text" placeholder="Enter your first name"/>  
+
+<br>
+<!-- Pattern:
+The pattern attribute creates a custom pattern validator.
+The value entered by the user is checked for validity against a specified pattern.
+If the user input value does not match with a specified pattern, an error message appears. -->
+
+Username: <input type="text" pattern="[A-Za-z]"/>  
+
+
+<br>
+<!-- Min, Max, and Step:
+The following are some of the attributes which are used only with range and number input types
+min: Specifies a minimum acceptable value.
+max: Specifies maximum acceptable value.
+step: Specifies a difference of consecutive values when the user uses the range/number input element. -->
+
+Job experience: <input type="number" min="2" max="10" step="1"/> 
+
+
+<br>
+
+<!-- Required:
+
+The required attribute specifies that user input is a must. 
+
+If the user does not enter any value in the input field which is associated with this attribute, a default error message appears on the screen. -->
+
+Username: <input type="text" required/> 
+Username: <input type="password" required/> 
+ 
+<br>
+ 
+<!-- Multiple:
+ 
+The multiple attribute value allows the user to enter/select/upload more than one value. -->
+<input type="file" multiple/>
+
+
+<br>
+
+
+<!-- Form-Override:
+
+The override attributes can be used to override the form-level built-in attribute functionalities using the submit/image input elements.
+
+Form-override attribute	Description
+formaction	Overrides the form action attribute
+formnovalidate	Overrides the form novalidate attribute
+formmethod	Overrides the form method attribute
+formtarget	Overrides the form target attribute -->
+
+
+<!-- In the below example, you can observe that the default form submission method 'GET' has been overridden to the 'POST' method due to the usage of 'formmethod' attribute in the submit input tag.  -->
+
+<form method="GET" action="">
+    <input type="submit" formmethod="POST">
+</form>
+
+
+<br>
+
+<!-- To test the form's functionality we may want to temporarily by-pass in-built validations done by form input type elements. This can be done by novalidate attribute.
+
+For example, if we want to bypass an email validation, you can use the below code: -->
+
+<form novalidate action='xyz.html'>
+<input type="email"/>
+<input type ="submit">
+</form>
+
+
+<br>
+<!-- HTML has autocomplete and autofocus attributes for the below-mentioned functionalities.
+
+autocomplete: 
+
+It allows the browser to predict user input value.
+
+When the user starts typing, the browser displays possible options, based on earlier typed values.
+
+Possible values of autocomplete are on and off where the default value is "on"
+
+autofocus:
+
+ Specifies that an element should automatically get focus when a web page loads.
+
+Example: -->
+
+Email:<input type="email" autocomplete="on"/> <br/> 
+Contact: <input type="number" autofocus/><br/>
+<input type="submit"/>
+
+<br>
+<!-- Hidden:
+
+In a web page, when an element is not directly relevant to the page's current state, it's a good choice to hide it.
+
+The hidden attribute is used for this requirement.
+
+Possible values are " " (Empty string) or hidden.
+
+For example, the below-given input field for the language will not be shown to the end-user.  -->
+
+<input name="language" value="English" hidden >

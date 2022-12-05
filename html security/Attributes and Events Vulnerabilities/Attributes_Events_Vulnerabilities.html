@@ -1,0 +1,92 @@
+<!-- 
+HTML5 has few tags, attributes, and events that are prone to different attacks as they can execute Javascript code. These will be vulnerable to XSS and CSRF attacks.
+
+Below are a few examples of such attacks:
+
+1. Malicious script injection via formaction attribute -->
+
+<!-- <form id="form1" />
+<button form="form1" formaction="javascript:alert(1)">Submit</button> -->
+<!-- In the above code snippet, the malicious script can be injected in formaction attribute. To prevent this, users should not be allowed to submit forms with form and formaction attributes or transform them into non-working attributes. -->
+ 
+
+<!-- 2. Malicious script injection via an onfocus event -->
+
+<!-- <input type="text" autofocus onfocus="alert('hacked')"/>   -->
+<!-- This will automatically get focus and then executes the script injected. To prevent this, markup elements should not contain autofocus attributes. -->
+
+ 
+
+<!-- 3. Malicious script injection via an onerror event in the video-tag -->
+
+<!-- <video src="/apis/authContent/content-store/Infosys/Infosys_Ltd/Public/lex_auth_012782317766025216289/web-hosted/assets/temp.mp3" onerror="alert('hacked')"></video> -->
+<!-- This code will run the script injected if the given source file is not available. So, we should not use event handlers in audio and video tags as these are prone to attacks. -->
+
+ 
+<!-- 
+Mitigation
+To defend against these attacks, we should use HTML Sanitization as a mitigation technique. Now let us understand what is HTML Sanitization. -->
+
+
+
+<!-- 
+HTML Sanitization provides protection from a few vulnerabilities like XSS(Cross-site scripting) by replacing HTML tags with safe tags or HTML entities.
+
+The tags such as <b>, <i>, <u>, <em>, and <strong>, which are used for changing fonts are often allowed. The sanitization process removes advanced tags like <script> <embed>,<object> and <link>. This process also removes potentially dangerous attributes like 'onclick' attribute in order to prevent malicious code injection into the application.
+
+Let us understand how to sanitize HTML data. The below table lists the entity names for some of the HTML characters.
+
+Entity names for some HTML characters
+Input Character	Encoded value
+<	&lt; or &#60;
+>	&gt; or &#62
+"	&quot; or &#34;
+'	&apos; or &#39;
+&	&amp; or &#38;
+When a web browser finds these entities, they will not be executed. But instead, they will be converted back to HTML tags and printed.
+
+Consider the scenario that an attacker injects the below HTML code into a web page.
+
+ -->
+
+<!-- <a href="#" onmouseover="alert('hacked')">Avengers</a> -->
+ 
+
+<!-- On using HTML sanitization, the response will be as below. -->
+
+<!-- &lt;a href="#" onmouseover="alert('hacked')"&gt; Avengers &lt;/a&gt; -->
+ 
+<!-- 
+This code will not be executed instead of stored as plain text in the response.
+
+There are many sanitizer libraries available to do this job. Some of the commonly used libraries are DOMPurify, XSS, and XSS-filters.
+
+ 
+
+Let us understand the usage of the DOMPurify library. -->
+
+
+
+
+
+
+
+
+
+
+
+<!-- DOMPurify is used for sanitizing HTML code. It is written in JavaScript and works in all modern browsers. This library strip out dangerous HTML and prevents XSS attacks by sanitizing the HTML code. On feeding string full of dirty HTML code to this library returns a string with clean HTML. Many security experts have already reviewed this library and identified that it is the recommended library for HTML sanitization.
+
+To use this library on the website, just include it as shown below. -->
+
+<script type="text/javascript" src="dist/purify.min.js"></script>
+ 
+
+<!-- Any dirty code can be sanitized using the below method. -->
+<script>
+var clean = DOMPurify.sanitize(dirty);
+console.log(clean)
+</script>
+<!-- Using document.write() method or using innerHTML property, the resulting HTML code can be written into DOM.
+
+It is very important to identify a suitable sanitizer library for securing your application. -->

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Text hyperlink: -->
+<!-- The text is mentioned within the start tag <a> and end tag </a> and is displayed on the screen in a clickable manner -->
+<a href="Enquire.html"> Click here to connect to us </a><br/>
+<a href="http://www.google.com"> Click here to go to Google website </a>
+
+
+
+<!-- Image hyperlink: -->
+<!-- We can also have an image-based hyperlink. For this, we need to wrap the image inside an anchor tag. -->
+<a href="http://www.google.com">
+    <img src="google.jpg" />
+</a>
+
+
+<!-- Bookmark hyperlink: -->
+<!-- When a web page is lengthy, we commonly come across icons or links that say "Go to Top" or "Go to Bottom". Click on these links does take the user to the top of the page or bottom, as applicable. Sometimes we also observe, on click of a text in the menu bar, the page auto scrolls to that particular section on that page. This is achieved by using the Bookmarking concept and the same is implemented by using hyperlinks. -->
+<h2 id="top">Topic</h2>
+<p>Detail……</p>
+<p>Detail……</p>
+<p>Detail……</p>
+<a href="#top">Go to Top</a>
+
+<!-- Email hyperlink: -->
+<!-- To send an email on click of a hyperlink, use the below syntax: -->
+<a href="mailto:vikashvermacom92@gmail.com?Subject=Hello%20again">Send Mail</a>
+<!-- On click of the link, the installed mail client on the computer gets activated for sending the email. An installed email client should necessarily be installed on the computer for this to work. -->
+
+
+<!-- Contact number hyperlink: -->
+<!-- To make a call to a number on click of a hyperlink, use the below syntax: -->
+<a href="tel:+91881795935">Call Us</a>
+
+
+
+
+<!-- Link element has an attribute named 'target' which specifies in which window, the hyperlinked content should appear. -->
+<!-- The target attribute can hold the following values:  -->
+    <a href="https://example8.com" target="_blank" >
+        Example site
+        </a>
+        
+
+        <!-- Best Practices: -->
+
+        <!-- The possible value of "target"
+
+Description
+
+_blank  Opens a web page in a new window or tab
+
+_self   Opens a web page in the same window (default)
+
+_parent Opens a web page in the parent frame
+
+_top    Opens a web page in the full body of the window
+
+frame-name  Opens a web page in a named frame -->
+
+
+
+<!-- It is a best practice to use href and rel attributes for links based on the requirement. -->
+<!-- It is recommended to use the values like noopener and noreferrer for the rel attribute in links to avoid security threats such as reverse tabnabbing. -->
+<a href="http://example.com" target="_blank" rel="noopener noreferrer">
+    Example site
+    </a>
+    <!-- In the above example:  -->
+<!-- rel=”noopener” attribute prevents the new page to be accessed by the window.opener property by ensuring it executes in a separate process. -->
+<!-- rel=”noreferrer” attribute is similar to noopener along with it prevents passing on the referrer details to the new page. -->
+
+    
+</body>
+</html>
+
+<!-- 
+A hyperlink is a prime way in which users can navigate from one web page to another. A hyperlink can point to another web page, or website, or files, or even specific locations on the same web page.
+
+Hyperlinks can be of any of the below types:
+
+Text hyperlink:
+A clickable text is used to take the user to another web page. Largely, we use text-based hyperlinks.
+This text usually appears with an underline and in a different color.
+This color mapping is automatically done by the browser for all text hyperlinks.
+
+Image hyperlink:
+A clickable image is used to take the user to another web page.
+
+Bookmark hyperlink:
+A clickable text/image is used to take the user to another part of the same web page.
+
+Email hyperlink:
+It allows users to send an email by clicking on that link.
+
+Contact number hyperlink:
+It allows the user to call a number by clicking on that link.
+Let us discuss various hyperlinks that can be created in an HTML page -->
